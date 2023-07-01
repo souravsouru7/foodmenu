@@ -1,0 +1,56 @@
+{% extends 'food/base.html' %}
+ 
+{% block body %}
+<style>
+    /* CSS styles for the form */
+    form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #F8F8F8;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #4CAF50;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        background-color: #FF5722;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #E64A19;
+    }
+</style>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h2>Food Item</h2>
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
+
+
+
